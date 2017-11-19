@@ -10,10 +10,37 @@
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       {% if site.title and site.title != page.title %}
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
+
+      <h1><a href="{{ "/" | absolute_url }}">
+          {{ site.title }}
+      </a></h1>
       {% endif %}
 
-      {{ content }}
+        {{ content }}
+
+        {% for post in site.categories.guide %}
+        {% if post.url == page.url %}
+        {% assign post_index0 = forloop.index0 %}
+        {% assign post_index1 = forloop.index %}
+        {% endif %}
+        {% endfor %}
+        {% for post in site.categories.guide %}
+        {% if post_index0 == forloop.index %}
+        {% assign next_post = post %}
+        {% endif %}
+        {% if post_index1 == forloop.index0 %}
+        {% assign prev_post = post %}
+        {% endif %}
+        {% endfor %}
+
+        {% if prev_post %}
+        <a href="{{ prev_post.url }}">⬅ {{prev_post.title}}</a> <br>
+        {% endif %}
+        {% if next_post %}
+        <a href="{{ next_post.url }}">{{next_post.title}} ➡</a> <br>
+        {% endif %}
+
+
 
       {% if site.github.private != true and site.github.license %}
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
@@ -21,6 +48,7 @@
       </div>
       {% endif %}
     </div>
+
     <script src="{{ "assets/javascript/anchor-js/anchor.min.js" | relative_url }}"></script>
     <script>anchors.add();</script>
   </body>
