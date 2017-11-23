@@ -51,4 +51,5 @@ fakeanon.sh@gmail.com - email для обратной связи
 ## Поддержать проект
 
 [![я.деньги](/assets/img/misc/ya1.png)](https://money.yandex.ru/to/410013219853731)
+
 [![биткоин](/assets/img/misc/btc1.png)](https://money.yandex.ru/to/410013219853731)
