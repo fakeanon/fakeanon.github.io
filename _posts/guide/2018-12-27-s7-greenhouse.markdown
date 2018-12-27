@@ -1,7 +1,7 @@
 ﻿---
 layout: default
 title:  "Этап VII: Парник"
-date:   2017-12-19 18:29:34 +0300
+date:   2018-12-27
 categories: guide
 
 ---
