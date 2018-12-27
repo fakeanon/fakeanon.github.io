@@ -1,0 +1,9 @@
+﻿---
+layout: default
+title:  "Заключение"
+date:   2018-12-27
+categories: guide
+
+---
+
+## Заключение
